@@ -1,87 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" conten="width=device-width, initial-scale=1.0">
-    <title>Lucas Snow Main Page</title>
-    <link rel="stylesheet" href="lucas_mainpage.css">
-
-
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Snow – Home</title>
 <style>
-    body {
-        background-color: skyblue;
-        text-align: center;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        background-image: url("https://tse1.mm.bing.net/th/id/OIP.F1MXqwAR9ly1Lsl1khmGIAHaE7?w=276&h=184&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3");
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100px;
-        --background-attachment: fixed;
-    }
-    
-    a:link {
-        color: black;
-    }
-    
-    a:visited {
-        color: grey;
-    }
-    
-    a:hover {
-        color: red;
-    }
-    
-    h3 p {
-        border-width: 5px;
-        border-color: black;
-        border-style: solid;
-    }
-    
-    @media only screen and (max-width: 600px) {
-        body {
-            background-color: skyblue;
-        }
-    }
-    
-    @media only screen and (min-width: 768px) {
-        body {
-            background-color: white;
-        }
-    }
-    
-    .h5 {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-    }
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: url('https://tse1.mm.bing.net/th/id/OIP.F1MXqwAR9ly1Lsl1khmGIAHaE7') no-repeat center/cover;
+color: #fff;
+text-align: center;
+}
+
+
+nav {
+background: rgba(0, 0, 0, 0.7);
+padding: 15px;
+display: flex;
+justify-content: center;
+gap: 30px;
+}
+
+
+nav a {
+color: white;
+text-decoration: none;
+font-size: 18px;
+font-weight: bold;
+}
+
+
+nav a:hover {
+color: #ffeb3b;
+}
+
+
+.content {
+padding: 40px;
+backdrop-filter: blur(4px);
+}
+
+
+img.location-img {
+width: 300px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 </style>
-
-
-
-
+</head>
 <body>
-    <h1>Lucas Snow</h1><img src="https://tse4.mm.bing.net/th/id/OIP.9WB17zsufYp5QJ_3tvzZHgHaL4?w=115&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Lucas Snow" />
-    <hr>
-    <article>
-        <h2>About Website:
-            <h4>
-                <p>This website inlcudes information on my journey as being a snowboarder. It describes the events and experiences I have had and also displays some of the locations I have travelled to.</p>
-            </h4>
-        </h2>
-        <hr>
-        <h3>Locations I have been</h3>
-        </h3>
-        <h5>
-            <p><em><a href="https://en.wikipedia.org/wiki/St._Moritz">St.Moritz, Switzerland</a> </em></p>
-            <img src=" https://tse4.mm.bing.net/th/id/OIP.S0wLSpAob4EVwUwwaepWOAHaE6?w=257&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="An image of st.moritz in winter" />
-            <p><em><a href="https://en.wikipedia.org/wiki/Lake_Placid,_New_York">Lake Placid, USA</a> </em></p><img src="https://tse3.mm.bing.net/th/id/OIP.CZJFUoDWRuy-XMoE9OazVAAAAA?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="An image of lake placid in winter"
-            />
-            <p><em><a href="https://en.wikipedia.org/wiki/Innsbruck ">Innsbruck, Austria</a> </em>
-            </p>
-            <img src="https://tse1.mm.bing.net/th/id/OIP.Rwt1O3JDdaFQjpQDAyA2TQHaFj?w=206&h=180&c=7&r=0&o=7&cb=12&dpr=1.3&pid=1.7&rm=3" alt="An image of innsbruck during winter" /></h3>
-        </h5>
-</body>
+<nav>
+<a href="main.html">Home</a>
+<a href="contact.html">Contact</a>
+<a href="skate.html">Blind Skateboarding</a>
+<a href="blind-skateboarding.html">Blind Skateboarding<\/a>
+</nav>
 
+
+<div class="content">
+<h1>Lucas Snow</h1>
+<img src="https://tse4.mm.bing.net/th/id/OIP.9WB17zsufYp5QJ_3tvzZHgHaL4" width="200" />
+
+
+<h2>About This Website</h2>
+<p>This website shares my journey as a snowboarder — the experiences, destinations, and memories I’ve made around the world.</p>
+
+
+<h3>Locations I Have Been</h3>
+<p><a href="https://en.wikipedia.org/wiki/St._Moritz">St. Moritz, Switzerland</a></p>
+<img class="location-img" src="https://tse4.mm.bing.net/th/id/OIP.S0wLSpAob4EVwUwwaepWOAHaE6" />
+
+
+<p><a href="https://en.wikipedia.org/wiki/Lake_Placid,_New_York">Lake Placid, USA</a></p>
+<img class="location-img" src="https://tse3.mm.bing.net/th/id/OIP.CZJFUoDWRuy-XMoE9OazVAAAAA" />
+
+
+<p><a href="https://en.wikipedia.org/wiki/Innsbruck">Innsbruck, Austria</a></p>
+<img class="location-img" src="https://tse1.mm.bing.net/th/id/OIP.Rwt1O3JDdaFQjpQDAyA2TQHaFj" />
+</div>
+</body>
 </html>
