@@ -47,6 +47,99 @@ width: 300px;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+/* Base styles stay the same */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://tse1.mm.bing.net/th/id/OIP.F1MXqwAR9ly1Lsl1khmGIAHaE7') no-repeat center/cover;
+  color: #fff;
+  text-align: center;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Helps navigation wrap on smaller screens */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+.content {
+  padding: 40px;
+  backdrop-filter: blur(4px);
+}
+
+img.location-img {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2, h3 {
+    font-size: 22px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  img.location-img {
+    width: 90%;
+  }
+
+  img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  img.location-img {
+    width: 95%;
+  }
+}
+
 </style>
 </head>
 <body>
