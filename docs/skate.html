@@ -4,73 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blind Skateboarders</title>
+
 <style>
 body {
-margin: 0;
-font-family: system-ui;
-background: #111;
-color: white;
-padding-bottom: 50px;
+  margin: 0;
+  font-family: system-ui;
+  background: #111;
+  color: white;
+  padding-bottom: 50px;
 }
-
 
 nav {
-background: rgba(0, 0, 0, 0.9);
-padding: 15px;
-display: flex;
-justify-content: center;
-gap: 30px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
-
 
 nav a {
-color: white;
-text-decoration: none;
-font-size: 18px;
-font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
 }
-
 
 nav a:hover {
-color: #4da8ff;
+  color: #4da8ff;
 }
-
 
 .content {
-max-width: 800px;
-margin: 40px auto;
-padding: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
 }
-
 
 blockquote {
-margin-left: 20px;
-border-left: 4px solid #4da8ff;
-padding-left: 15px;
-font-style: italic;
+  margin-left: 20px;
+  border-left: 4px solid #4da8ff;
+  padding-left: 15px;
+  font-style: italic;
 }
-
 
 .contact-form input,
 .contact-form textarea {
-width: 100%;
-padding: 10px;
-border-radius: 5px;
-border: none;
-margin-top: 5px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 5px;
 }
 </style>
 </head>
 <body>
-<nav>
-<a href="index.html">Home</a>
-<a href="contact.html">Contact</a>
-<a href="skate.html">Blind Skateboarding</a>
 
+<nav>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a href="skate.html">Blind Skateboarding</a>
 </nav>
 
-
 <div class="content">
+
 <section>
 <h2>Why Blind Skateboarders Are Amazing</h2>
 <p>Skateboarding without sight isn’t just impressive — it’s revolutionary. Blind skateboarders rely on sound, touch, and instinct to perform incredible tricks and inspire the world.</p>
@@ -80,14 +81,82 @@ margin-top: 5px;
 </blockquote>
 </section>
 
-
 <h1>Contact for Trip Enquiry</h1>
+
 <div class="contact-form">
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="4" placeholder="Your Message"></textarea>
-<button style="margin-top:10px; padding:10px; width:100%; border:none; border-radius:5px; font-weight:bold;">Submit</button>
+  <form id="contactForm">
+    <label>Your Name</label>
+    <input type="text" id="name">
+    <div class="error" id="nameError"></div>
+
+    <label>Your Email</label>
+    <input type="email" id="email">
+    <div class="error" id="emailError"></div>
+
+    <label>Your Message</label>
+    <textarea id="message" rows="4"></textarea>
+    <div class="error" id="messageError"></div>
+
+    <button type="submit" style="margin-top:10px; padding:10px; width:100%; border:none; border-radius:5px; font-weight:bold;">
+      Submit
+    </button>
+  </form>
 </div>
+
 </div>
+
+<script>
+// FORM VALIDATION SCRIPT
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  
+  // get fields
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  // get error fields
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
+
+  // reset errors
+  nameError.textContent = "";
+  emailError.textContent = "";
+  messageError.textContent = "";
+
+  let valid = true;
+
+  // name validation
+  if (name.value.trim() === "") {
+    nameError.textContent = "Please enter your name.";
+    valid = false;
+  }
+
+  // email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email.value.trim() === "") {
+    emailError.textContent = "Please enter your email.";
+    valid = false;
+  } else if (!emailPattern.test(email.value)) {
+    emailError.textContent = "Please enter a valid email address.";
+    valid = false;
+  }
+
+  // message validation
+  if (message.value.trim().length < 10) {
+    messageError.textContent = "Message must be at least 10 characters.";
+    valid = false;
+  }
+
+  // stop form if invalid
+  if (!valid) {
+    event.preventDefault();
+  } else {
+    alert("Form submitted successfully!");
+  }
+});
+</script>
+
 </body>
 </html>
+
